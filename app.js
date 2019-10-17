@@ -1,5 +1,6 @@
 var Koa = require('koa')
 var app = new Koa()
+var cors = require('koa2-cors')
 
 const middleWare = require('./middleware')
 const router = require('./router')
@@ -13,6 +14,7 @@ const router = require('./router')
 // })
 // app.use(router.routes())
 
+app.use(cors)
 
 middleWare(app)
 router(app)
